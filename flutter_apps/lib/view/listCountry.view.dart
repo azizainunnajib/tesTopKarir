@@ -31,8 +31,11 @@ class ListCountry extends StatelessWidget {
                   child: TextField(
                     decoration: new InputDecoration(hintText: 'Search'),
                     onChanged: (val) {
-                      var listRes = allCountryController.items
-                          .where((e) => e['name_en'].toString().contains(val));
+                      var listRes = allCountryController.items.where((e) =>
+                          e['name_en']
+                              .toString()
+                              .toLowerCase()
+                              .contains(val.toLowerCase()));
                       allCountryController.itemsFinal.assignAll(listRes);
                     },
                   ),

@@ -60,9 +60,12 @@ class Schedule extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                  formatter.format(DateTime.parse(
-                                      scheduleController.items[index]
-                                          ["strTimestamp"])),
+                                  ![null, ''].contains(scheduleController
+                                          .items[index]["strTimestamp"])
+                                      ? formatter.format(DateTime.parse(
+                                          scheduleController.items[index]
+                                              ["strTimestamp"]))
+                                      : "No Schedule Data",
                                   style: GoogleFonts.abrilFatface(
                                       fontSize: 14, color: Colors.black87)),
                               Row(
